@@ -1,17 +1,26 @@
 .friendMessage {
-
+    width: 462px;
+    height: 77px;
+    margin-top: 30px;
 }
 
 .friendImageAndText {
-
+    display: flex;
+    align-items: flex-end;
 }
 
 .friendImageAndText img {
-
+    width: 48px;
+    height: 48px;
 }
 
 .friendText {
-
+    width: 414px;
+    height: 60px;
+    background: #F5F7FB;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 5px 20px rgba(29, 33, 38, 0.03), 0px 1px 2px rgba(29, 33, 38, 0.1);
 }
 
 .friendText:after {
@@ -27,5 +36,8 @@
 }
 
 .friendTime {
-
+    width: 26px;
+    height: 12px;
+    font-size: 10px;
+    padding-left: 10px;
 }
