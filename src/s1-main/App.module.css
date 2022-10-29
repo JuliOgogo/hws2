@@ -9,10 +9,15 @@
 .hw {
     height: 336px;
     padding-top: 24px;
+    border-bottom-width: medium;
+    border-bottom-color: cornflowerblue;
+    border-bottom-style: solid;
 }
 
 .hwTitle {
-
+    border-bottom-width: medium;
+    border-bottom-color: cornflowerblue;
+    border-bottom-style: solid;
 }
 
 .messages {

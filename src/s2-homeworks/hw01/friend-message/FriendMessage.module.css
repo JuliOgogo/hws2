@@ -28,7 +28,8 @@
 }
 
 .friendName {
-
+    font-size: medium;
+    font-weight: bold;
 }
 
 .friendMessageText {
