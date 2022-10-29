@@ -19,7 +19,7 @@
 }
 
 .text {
-    width: 527px;
+    width: 512px;
     height: 60px;
     background: #0066CC;
     padding: 10px;
@@ -27,8 +27,7 @@
     flex-direction: column;
     align-items: flex-end;
     color: #FFFFFF;
-    border-radius: 5px;
-    box-shadow: 0px 5px 20px rgba(29, 33, 38, 0.03), 0px 1px 2px rgba(29, 33, 38, 0.1);
+    border-radius: 5px 5px 0 5px;
 }
 
 .text:after {
@@ -49,4 +48,11 @@
     height: 12px;
     font-size: 10px;
     padding-right: 37px;
+}
+
+.block {
+    width: 0;
+    height: 0;
+    border-bottom: 10px solid #0066CC;
+    border-right: 15px solid transparent;
 }
