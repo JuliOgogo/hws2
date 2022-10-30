@@ -3,7 +3,6 @@
     width: 1280px;
     height: 1770px;
     padding: 107px 70px;
-    background-color: lavender;
 }
 
 .hw {
@@ -12,12 +11,15 @@
     border-bottom-width: medium;
     border-bottom-color: cornflowerblue;
     border-bottom-style: solid;
+    margin-bottom: 39px;
 }
 
 .hwTitle {
     border-bottom-width: medium;
     border-bottom-color: cornflowerblue;
     border-bottom-style: solid;
+    height: 37px;
+    font-size: 22px;
 }
 
 .messages {
