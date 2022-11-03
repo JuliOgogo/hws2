@@ -1,17 +1,13 @@
 .App {
     --header_height: 60px;
-    width: 1280px;
-    min-height: 1770px;
-    padding: 107px 70px;
 }
 
 .hw {
     min-height: 336px;
-    padding-top: 24px;
+    padding: 24px 70px 39px 70px;
     border-bottom-width: medium;
     border-bottom-color: cornflowerblue;
     border-bottom-style: solid;
-    margin-bottom: 39px;
 }
 
 .hwTitle {
@@ -20,4 +16,6 @@
     border-bottom-style: solid;
     height: 37px;
     font-size: 22px;
+    margin-top: 20px;
+    padding-left: 70px;
 }
