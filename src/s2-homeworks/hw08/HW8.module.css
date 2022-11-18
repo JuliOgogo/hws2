@@ -5,19 +5,32 @@
 }
 
 .users {
+    min-width: 606px;
+    margin-top: 18px;
 }
 
 .buttonsContainer {
+    display: flex;
+    gap: 10px;
+    max-width: 606px;
+    justify-content: flex-end;
 }
 
 .container {
 }
 
 .thead {
+    min-height: 36px;
+    background: #E5E5E5;
+    font-weight: bold;
 }
 
 .nameCol {
+    width: 218px;
+    padding: 10px 17px;
 }
 
 .ageCol {
+    width: 284px;
+    padding: 10px 0;
 }
