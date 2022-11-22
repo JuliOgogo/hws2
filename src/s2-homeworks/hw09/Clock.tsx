@@ -32,7 +32,7 @@ function Clock() {
         setShow(false)
     }
 
-    /*let formatterForStringTime = new Intl.DateTimeFormat('ru', {
+    let formatterForStringTime = new Intl.DateTimeFormat('ru', {
         hour: "numeric",
         minute: "numeric",
         second: "numeric"
@@ -43,10 +43,10 @@ function Clock() {
         year: "numeric"
     })
     const stringTime = formatterForStringTime.format(date) || <br/> // часы24:минуты:секунды (01:02:03)/(23:02:03)/(24:00:00)/(00:00:01) // пишут студенты
-    const stringDate = formatterForStringDate.format(date) || <br/>*/ // день.месяц.год (01.02.2022) // пишут студенты, варианты 01.02.0123/01.02.-123/01.02.12345 не рассматриваем
+    const stringDate = formatterForStringDate.format(date) || <br/> // день.месяц.год (01.02.2022) // пишут студенты, варианты 01.02.0123/01.02.-123/01.02.12345 не рассматриваем
 
-    const stringTime = date.toLocaleTimeString() || <br/>
-    const stringDate = date.toLocaleDateString() || <br/>
+    /*const stringTime = date.toLocaleTimeString() || <br/>
+    const stringDate = date.toLocaleDateString() || <br/>*/
 
     // день недели на английском, месяц на английском (https://learn.javascript.ru/intl#intl-datetimeformat)
     const stringDay = new Intl.DateTimeFormat('en', {weekday: "long"}).format(date) || <br/>
