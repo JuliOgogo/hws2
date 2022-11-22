@@ -4,6 +4,7 @@
 }
 
 .clock {
+    position: relative;
 }
 
 .watch {
@@ -11,6 +12,7 @@
     font-size: 20px;
     line-height: 24px;
     margin-bottom: 55px;
+    width: 180px;
 }
 
 .watch strong {
@@ -22,6 +24,5 @@
     line-height: 20px;
     color: rgba(0, 0, 0, 0.5);
     position: absolute;
-    left: 70px;
-    top: 1440px;
+    top: 30px;
 }
