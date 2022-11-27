@@ -1,5 +1,5 @@
-.loader {
-    /*свг и/или анимация*/
+/*.loader {
+    !*свг и/или анимация*!
     background-image: url("Ellipse 4.png");
     animation: spin 5s linear 0s infinite;
     width: 90px;
@@ -13,4 +13,4 @@
     to {
         transform: rotate(360deg);
     }
-}
+}*/

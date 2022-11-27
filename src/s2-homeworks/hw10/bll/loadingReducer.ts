@@ -2,7 +2,7 @@ export type initStateType = {
     isLoading: boolean
 }
 const initState = {
-    isLoading: false,
+    isLoading: false
 }
 
 export const loadingReducer = (state: initStateType = initState, action: LoadingActionType): initStateType => {
@@ -22,5 +22,5 @@ type LoadingActionType = {
 
 export const loadingAC = (isLoading: boolean): LoadingActionType => ({
     type: 'CHANGE_LOADING',
-    isLoading,
+    isLoading
 })
