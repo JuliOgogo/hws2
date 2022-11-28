@@ -14,3 +14,12 @@
         transform: rotate(360deg);
     }
 }*/
+
+.loader {
+    width: 132px;
+    height: 30px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
