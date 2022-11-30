@@ -1,6 +1,6 @@
-import {changeThemeId, themeReducer} from "./themeReducer";
+import {changeThemeId, InitStateType, themeReducer} from "./themeReducer";
 
-let startState: { themeId: string }
+let startState: InitStateType
 
 beforeEach(() => {
     startState = {
