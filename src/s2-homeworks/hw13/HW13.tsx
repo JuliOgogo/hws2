@@ -31,34 +31,51 @@ const HW13 = () => {
         setText('')
         setInfo('...loading')
 
+        const setValues = (values: { code: string, text: string, info: string, image: string }) => {
+            setCode(values.code)
+            setText(values.text)
+            setInfo(values.info)
+            setImage(values.image)
+        }
+
         axios
             .post(url, {success: x})
             .then((res) => {
                 if (x) {
-                    setCode('Код 200!')
-                    setImage(success200)
-                    // дописать
-                    setText('...всё ок)')
-                    setInfo('код 200 - обычно означает что скорее всего всё ок)')
+                    const values = {
+                        code: 'Код 200!',
+                        text: '...всё ок)',
+                        info: 'код 200 - обычно означает что скорее всего всё ок)',
+                        image: success200
+                    }
+                    setValues(values)
                 }
             })
             .catch((e) => {
-                // дописать
                 if (x === undefined) {
-                    setCode('Ошибка 400!')
-                    setImage(error400)
-                    setText('Ты не отправил success в body вообще!')
-                    setInfo('ошибка 400 - обычно означает что скорее всего фронт отправил что-то не то на бэк!')
+                    const values = {
+                        code: 'Ошибка 400!',
+                        text: 'Ты не отправил success в body вообще!',
+                        info: 'ошибка 400 - обычно означает что скорее всего фронт отправил что-то не то на бэк!',
+                        image: error400
+                    }
+                    setValues(values)
                 } else if (x === false) {
-                    setCode('Ошибка 500!')
-                    setImage(error500)
-                    setText('эмитация ошибки на сервере')
-                    setInfo('ошибка 500 - обычно означает что что-то сломалось на сервере, например база данных)')
+                    const values = {
+                        code: 'Ошибка 500!',
+                        text: 'эмитация ошибки на сервере',
+                        info: 'ошибка 500 - обычно означает что что-то сломалось на сервере, например база данных)',
+                        image: error500
+                    }
+                    setValues(values)
                 } else {
-                    setCode('Error!')
-                    setImage(errorUnknown)
-                    setText('Network Error')
-                    setInfo('AxiosError')
+                    const values = {
+                        code: 'Error!',
+                        text: 'Network Error',
+                        info: 'AxiosError',
+                        image: errorUnknown
+                    }
+                    setValues(values)
                 }
             })
     }
@@ -73,7 +90,6 @@ const HW13 = () => {
                         id={'hw13-send-true'}
                         onClick={send(true)}
                         xType={'secondary'}
-                        // дописать
                         disabled={info === '...loading'}
                     >
                         Send true
@@ -82,7 +98,6 @@ const HW13 = () => {
                         id={'hw13-send-false'}
                         onClick={send(false)}
                         xType={'secondary'}
-                        // дописать
                         disabled={info === '...loading'}
                     >
                         Send false
@@ -91,7 +106,6 @@ const HW13 = () => {
                         id={'hw13-send-undefined'}
                         onClick={send(undefined)}
                         xType={'secondary'}
-                        // дописать
                         disabled={info === '...loading'}
                     >
                         Send undefined
@@ -100,7 +114,6 @@ const HW13 = () => {
                         id={'hw13-send-null'}
                         onClick={send(null)} // имитация запроса на не корректный адрес
                         xType={'secondary'}
-                        // дописать
                         disabled={info === '...loading'}
                     >
                         Send null
