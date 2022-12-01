@@ -23,6 +23,9 @@
 }
 
 .code {
+    font-size: large;
+    font-weight: bold;
+    margin-bottom: 10px;
 }
 
 .text {

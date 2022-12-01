@@ -44,7 +44,7 @@ const HW13 = () => {
             })
             .catch((e) => {
                 // дописать
-                if (x === null) {
+                if (x === undefined) {
                     setCode('Ошибка 400!')
                     setImage(error400)
                     setText('Ты не отправил success в body вообще!')
@@ -55,9 +55,10 @@ const HW13 = () => {
                     setText('эмитация ошибки на сервере')
                     setInfo('ошибка 500 - обычно означает что что-то сломалось на сервере, например база данных)')
                 } else {
+                    setCode('Error!')
                     setImage(errorUnknown)
-                    setText('Error!')
-                    setInfo('Network Error AxiosError')
+                    setText('Network Error')
+                    setInfo('AxiosError')
                 }
             })
     }
