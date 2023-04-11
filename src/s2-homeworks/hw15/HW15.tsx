@@ -12,7 +12,7 @@ import SuperSort from './common/c10-SuperSort/SuperSort'
 * 3 - проверить pureChange тестами
 * 3 - дописать sendQuery, onChangePagination, onChangeSort в HW15
 * 4 - сделать стили в соответствии с дизайном
-* 5 - добавить HW15 в HW5/pages/JuniorPlus
+* 5 - добавить HW15 в HW5/pages/JuniorPlus +
 * */
 
 type TechType = {
@@ -48,19 +48,25 @@ const HW15 = () => {
                 // делает студент
 
                 // сохранить пришедшие данные
+                if (res) {
+                    setTechs(res.data.techs)
+                    setTotalCount(res.data.totalCount)
+                }
 
                 //
-            })
+            }).catch(res => {
+            setLoading(false)
+        })
     }
 
     const onChangePagination = (newPage: number, newCount: number) => {
         // делает студент
 
-        // setPage(
-        // setCount(
+        setPage(newPage)
+        setCount(newCount)
 
-        // sendQuery(
-        // setSearchParams(
+        sendQuery({newPage, newCount})
+        setSearchParams({page: newPage.toString(), count: newCount.toString()})
 
         //
     }
