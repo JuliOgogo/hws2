@@ -21,7 +21,7 @@ type TechType = {
     developer: string
 }
 
-const getTechs = (params: any) => {
+const getTechs = (params: { page: string, count: string }) => {
     return axios
         .get<{ techs: TechType[], totalCount: number }>(
             'https://samurai.it-incubator.io/api/3.0/homework/test3',
@@ -41,7 +41,7 @@ const HW15 = () => {
     const [searchParams, setSearchParams] = useSearchParams()
     const [techs, setTechs] = useState<TechType[]>([])
 
-    const sendQuery = (params: any) => {
+    const sendQuery = (params: { page: string, count: string }) => {
         setLoading(true)
         getTechs(params)
             .then((res) => {
@@ -65,7 +65,7 @@ const HW15 = () => {
         setPage(newPage)
         setCount(newCount)
 
-        sendQuery({newPage, newCount})
+        sendQuery({page: newPage.toString(), count: newCount.toString()})
         setSearchParams({page: newPage.toString(), count: newCount.toString()})
 
         //
