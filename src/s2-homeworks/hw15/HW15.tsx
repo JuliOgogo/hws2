@@ -7,10 +7,10 @@ import {useSearchParams} from 'react-router-dom'
 import SuperSort from './common/c10-SuperSort/SuperSort'
 
 /*
-* 1 - дописать SuperPagination
-* 2 - дописать SuperSort
-* 3 - проверить pureChange тестами
-* 3 - дописать sendQuery, onChangePagination, onChangeSort в HW15
+* 1 - дописать SuperPagination +
+* 2 - дописать SuperSort +
+* 3 - проверить pureChange тестами +
+* 3 - дописать sendQuery, onChangePagination, onChangeSort в HW15 +-
 * 4 - сделать стили в соответствии с дизайном
 * 5 - добавить HW15 в HW5/pages/JuniorPlus +
 * */
@@ -21,7 +21,7 @@ type TechType = {
     developer: string
 }
 
-const getTechs = (params: { page: string, count: string }) => {
+const getTechs = (params: { page?: string, count?: string, sort?: string}) => {
     return axios
         .get<{ techs: TechType[], totalCount: number }>(
             'https://samurai.it-incubator.io/api/3.0/homework/test3',
@@ -41,7 +41,7 @@ const HW15 = () => {
     const [searchParams, setSearchParams] = useSearchParams()
     const [techs, setTechs] = useState<TechType[]>([])
 
-    const sendQuery = (params: { page: string, count: string }) => {
+    const sendQuery = (params: { page?: string, count?: string, sort?: string }) => {
         setLoading(true)
         getTechs(params)
             .then((res) => {
@@ -54,7 +54,7 @@ const HW15 = () => {
                 }
 
                 //
-            }).catch(res => {
+            }).finally(() => {
             setLoading(false)
         })
     }
@@ -65,8 +65,8 @@ const HW15 = () => {
         setPage(newPage)
         setCount(newCount)
 
-        sendQuery({page: newPage.toString(), count: newCount.toString()})
-        setSearchParams({page: newPage.toString(), count: newCount.toString()})
+        sendQuery({page: newPage.toString(), count: newCount.toString(), sort: sort.toString()})
+        setSearchParams({page: newPage.toString(), count: newCount.toString(), sort: sort.toString()})
 
         //
     }
@@ -77,8 +77,9 @@ const HW15 = () => {
         setSort(newSort)
         setPage(1) // при сортировке сбрасывать на 1 страницу
 
-        // sendQuery(
-        // setSearchParams(
+        sendQuery({page: page.toString(), count: count.toString(), sort: newSort.toString()})
+        setSearchParams({page: page.toString(), count: count.toString(), sort: newSort.toString()})
+
 
         //
     }
